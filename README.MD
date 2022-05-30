@@ -3,19 +3,16 @@
 ## Why?
 This provides a sandbox environment for Kodi to run.
 
-&nbsp;
 ## Tested on
 - Ubuntu 20.04 (Host)
 - PulseAudio
 - X11 graphical environment (mouse & keyboard working)
 
-&nbsp;
 ## Build Docker Image named kodi (with the Dockerfile in the repo)
 ```bash
 docker build -t kodi .
 ```
 
-&nbsp;
 ## Create a new Container
 - Two directories are created to be mounted in the container (change these for your environment):
   - $HOME/Downloads/dockerKodi/kodi    (Kodi configurations)
@@ -30,14 +27,13 @@ docker container create --name kodi \
 -v $HOME/.Xauthority:/home/raiden/.Xauthority kodi
 ```
 
-&nbsp;
-## Create kodi and movies directories manually. If leaving this to Docker, these volume directories will have permission root:root on the host.
+## Create kodi and movies directories manually
+- If leaving this to Docker, these volume directories will have permission root:root on the host.
 ```bash
 mkdir $HOME/Downloads/dockerKodi/kodi
 mkdir $HOME/Downloads/dockerKodi/movies
 ```
 
-&nbsp;
 ## Run the Container
 ```bash
 docker start kodi
